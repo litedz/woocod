@@ -1,459 +1,449 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WooCoD DZ - Cash on Delivery for WooCommerce Algeria</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: Inter, Arial, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-        }
+      body {
+        font-family: Inter, Arial, sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        line-height: 1.6;
+      }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
 
-        header {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
+      header {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+      }
 
+      header h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: auto;
+        opacity: 0.9;
+      }
+
+      .hero-buttons {
+        margin-top: 40px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+        margin: 5px;
+      }
+
+      .btn-primary {
+        background: #22c55e;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #16a34a;
+      }
+
+      .btn-secondary {
+        border: 2px solid white;
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: #0f172a;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card h3 {
+        margin-bottom: 10px;
+      }
+
+      .pricing {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .plan {
+        background: white;
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        position: relative;
+      }
+
+      .featured {
+        border: 3px solid #22c55e;
+        transform: scale(1.03);
+      }
+
+      .badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: #22c55e;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .price {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      .price small {
+        font-size: 1rem;
+        color: #64748b;
+      }
+
+      .plan ul {
+        list-style: none;
+        margin: 25px 0;
+      }
+
+      .plan ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      th {
+        background: #0f172a;
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 16px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      .faq-item {
+        background: white;
+        margin-bottom: 15px;
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      footer {
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      footer h2 {
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
         header h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: auto;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            margin-top: 40px;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: .3s;
-            margin: 5px;
-        }
-
-        .btn-primary {
-            background: #22c55e;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #16a34a;
-        }
-
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #0f172a;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-            gap: 25px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.05);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-            gap: 30px;
-        }
-
-        .plan {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 15px 40px rgba(0,0,0,.08);
-            position: relative;
+          font-size: 2.5rem;
         }
 
         .featured {
-            border: 3px solid #22c55e;
-            transform: scale(1.03);
+          transform: none;
         }
-
-        .badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: #22c55e;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .price small {
-            font-size: 1rem;
-            color: #64748b;
-        }
-
-        .plan ul {
-            list-style: none;
-            margin: 25px 0;
-        }
-
-        .plan ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        th {
-            background: #0f172a;
-            color: white;
-        }
-
-        th, td {
-            padding: 16px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        footer {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        footer h2 {
-            margin-bottom: 15px;
-        }
-
-        @media(max-width:768px){
-            header h1{
-                font-size:2.5rem;
-            }
-
-            .featured{
-                transform:none;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
-<header>
-    <div class="container">
+  </head>
+  <body>
+    <header>
+      <div class="container">
         <h1>WooCoD DZ</h1>
 
         <p>
-            The complete Cash on Delivery solution for WooCommerce stores in Algeria.
-            Manage wilayas, delivery fees, checkout customization and orders from one powerful plugin.
+          The complete Cash on Delivery solution for WooCommerce stores in
+          Algeria. Manage wilayas, delivery fees, checkout customization and
+          orders from one powerful plugin.
         </p>
 
         <div class="hero-buttons">
-            <a href="#pricing" class="btn btn-primary">View Pricing</a>
-            <a href="#features" class="btn btn-secondary">Explore Features</a>
+          <a href="#pricing" class="btn btn-primary">View Pricing</a>
+          <a href="#features" class="btn btn-secondary">Explore Features</a>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<section id="features">
-    <div class="container">
-
+    <section id="features">
+      <div class="container">
         <div class="section-title">
-            <h2>Why Choose WooCoD DZ?</h2>
-            <p>Designed specifically for Algerian WooCommerce stores.</p>
+          <h2>Why Choose WooCoD DZ?</h2>
+          <p>Designed specifically for Algerian WooCommerce stores.</p>
         </div>
 
         <div class="features">
+          <div class="feature-card">
+            <h3>📦 COD Checkout Form</h3>
+            <p>
+              Simple and optimized cash on delivery form for Algerian customers.
+            </p>
+          </div>
 
-            <div class="feature-card">
-                <h3>📦 COD Checkout Form</h3>
-                <p>Simple and optimized cash on delivery form for Algerian customers.</p>
-            </div>
+          <div class="feature-card">
+            <h3>📍 Wilaya Management</h3>
+            <p>Manage all Algerian wilayas directly from WooCommerce.</p>
+          </div>
 
-            <div class="feature-card">
-                <h3>📍 Wilaya Management</h3>
-                <p>Manage all Algerian wilayas directly from WooCommerce.</p>
-            </div>
+          <div class="feature-card">
+            <h3>🚚 Delivery Fees</h3>
+            <p>Configure delivery fees per wilaya.</p>
+          </div>
 
-            <div class="feature-card">
-                <h3>🚚 Delivery Fees</h3>
-                <p>Configure delivery fees per wilaya.</p>
-            </div>
+          <div class="feature-card">
+            <h3>🎨 Checkout Customization</h3>
+            <p>Customize colors, fields and customer experience.</p>
+          </div>
 
-            <div class="feature-card">
-                <h3>🎨 Checkout Customization</h3>
-                <p>Customize colors, fields and customer experience.</p>
-            </div>
+          <div class="feature-card">
+            <h3>📊 Orders Dashboard</h3>
+            <p>Track and manage orders efficiently with Pro.</p>
+          </div>
 
-            <div class="feature-card">
-                <h3>📊 Orders Dashboard</h3>
-                <p>Track and manage orders efficiently with Pro.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>⚡ Fast & Lightweight</h3>
-                <p>Built for performance and WooCommerce compatibility.</p>
-            </div>
-
+          <div class="feature-card">
+            <h3>⚡ Fast & Lightweight</h3>
+            <p>Built for performance and WooCommerce compatibility.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-<section id="pricing">
-    <div class="container">
-
+    <section id="pricing">
+      <div class="container">
         <div class="section-title">
-            <h2>Choose Your Plan</h2>
-            <p>Start with Basic or unlock advanced order management with Pro.</p>
+          <h2>Choose Your Plan</h2>
+          <p>Start with Basic or unlock advanced order management with Pro.</p>
         </div>
 
         <div class="pricing">
+          <div class="plan">
+            <h3>Basic</h3>
 
-            <div class="plan">
-
-                <h3>Basic</h3>
-
-                <div class="price">
-                    $29
-                    <small>/year</small>
-                </div>
-
-                <ul>
-                    <li>✅ COD Checkout Form</li>
-                    <li>✅ Wilaya Management</li>
-                    <li>✅ Delivery Fees</li>
-                    <li>✅ Checkout Customization</li>
-                    <li>✅ Plugin Updates</li>
-                    <li>✅ Standard Support</li>
-                </ul>
-
-                <a href="https://checkout.freemius.com/plugin/30694/plan/51741/"
-                   class="btn btn-primary"
-                   style="width:100%;text-align:center;">
-                    Buy Basic
-                </a>
-
+            <div class="price">
+              $29
+              <small>/year</small>
             </div>
 
-            <div class="plan featured">
+            <ul>
+              <li>✅ COD Checkout Form</li>
+              <li>✅ Wilaya Management</li>
+              <li>✅ Delivery Fees</li>
+              <li>✅ Checkout Customization</li>
+              <li>✅ Plugin Updates</li>
+              <li>✅ Standard Support</li>
+            </ul>
 
-                <span class="badge">Most Popular</span>
+            <a
+              href="https://checkout.freemius.com/plugin/30694/plan/51741/"
+              class="btn btn-primary"
+              style="width: 100%; text-align: center"
+            >
+              Buy Basic
+            </a>
+          </div>
 
-                <h3>Pro</h3>
+          <div class="plan featured">
+            <span class="badge">Most Popular</span>
 
-                <div class="price">
-                    $59
-                    <small>/year</small>
-                </div>
+            <h3>Pro</h3>
 
-                <ul>
-                    <li>✅ Everything in Basic</li>
-                    <li>✅ Orders Dashboard</li>
-                    <li>✅ Order Management</li>
-                    <li>✅ Status Tracking</li>
-                    <li>✅ Reports & Analytics</li>
-                    <li>✅ Priority Support</li>
-                </ul>
-
-                <a href="https://checkout.freemius.com/plugin/30694/plan/51781/"
-                   class="btn btn-primary"
-                   style="width:100%;text-align:center;">
-                    Buy Pro
-                </a>
-
+            <div class="price">
+              $39
+              <small>/year</small>
             </div>
 
+            <ul>
+              <li>✅ Everything in Basic Plan</li>
+              <li>✅ Orders Dashboard & Management</li>
+              <li>✅ Live Abandoned Orders Tracking</li>
+              <li>✅ Abandoned Orders Recovery System</li>
+              <li>✅ Smart Search (Filter by Phone Number)</li>
+              <li>✅ Order Status Tracking</li>
+              <li>✅ Product Image Preview in Orders</li>
+              <li>✅ Reports & Analytics</li>
+              <li>✅ Priority Support</li>
+            </ul>
+
+            <a
+              href="https://checkout.freemius.com/plugin/30694/plan/51781/"
+              class="btn btn-primary"
+              style="width: 100%; text-align: center"
+            >
+              Buy Pro
+            </a>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-<section>
-    <div class="container">
-
+    <section>
+      <div class="container">
         <div class="section-title">
-            <h2>Compare Plans</h2>
+          <h2>Compare Plans</h2>
         </div>
 
         <table>
-
-            <thead>
+          <thead>
             <tr>
-                <th>Feature</th>
-                <th>Basic</th>
-                <th>Pro</th>
+              <th>Feature</th>
+              <th>Basic</th>
+              <th>Pro</th>
             </tr>
-            </thead>
+          </thead>
 
-            <tbody>
+          <tbody>
             <tr>
-                <td>COD Checkout Form</td>
-                <td>✅</td>
-                <td>✅</td>
-            </tr>
-
-            <tr>
-                <td>Wilaya Management</td>
-                <td>✅</td>
-                <td>✅</td>
+              <td>COD Checkout Form</td>
+              <td>✅</td>
+              <td>✅</td>
             </tr>
 
             <tr>
-                <td>Delivery Fees</td>
-                <td>✅</td>
-                <td>✅</td>
+              <td>Wilaya Management</td>
+              <td>✅</td>
+              <td>✅</td>
             </tr>
 
             <tr>
-                <td>Checkout Customization</td>
-                <td>✅</td>
-                <td>✅</td>
+              <td>Delivery Fees</td>
+              <td>✅</td>
+              <td>✅</td>
             </tr>
 
             <tr>
-                <td>Orders Dashboard</td>
-                <td>❌</td>
-                <td>✅</td>
+              <td>Checkout Customization</td>
+              <td>✅</td>
+              <td>✅</td>
             </tr>
 
             <tr>
-                <td>Order Management</td>
-                <td>❌</td>
-                <td>✅</td>
+              <td>Orders Dashboard</td>
+              <td>❌</td>
+              <td>✅</td>
             </tr>
 
             <tr>
-                <td>Reports</td>
-                <td>❌</td>
-                <td>✅</td>
+              <td>Order Management</td>
+              <td>❌</td>
+              <td>✅</td>
             </tr>
 
             <tr>
-                <td>Priority Support</td>
-                <td>❌</td>
-                <td>✅</td>
+              <td>Reports</td>
+              <td>❌</td>
+              <td>✅</td>
             </tr>
-            </tbody>
 
+            <tr>
+              <td>Priority Support</td>
+              <td>❌</td>
+              <td>✅</td>
+            </tr>
+          </tbody>
         </table>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-<section>
-    <div class="container">
-
+    <section>
+      <div class="container">
         <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
+          <h2>Frequently Asked Questions</h2>
         </div>
 
         <div class="faq-item">
-            <h3>Does WooCoD DZ work with WooCommerce?</h3>
-            <p>Yes. It integrates directly with WooCommerce.</p>
+          <h3>Does WooCoD DZ work with WooCommerce?</h3>
+          <p>Yes. It integrates directly with WooCommerce.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Does it support all Algerian wilayas?</h3>
-            <p>Yes. All wilayas are included and configurable.</p>
+          <h3>Does it support all Algerian wilayas?</h3>
+          <p>Yes. All wilayas are included and configurable.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Can I upgrade later?</h3>
-            <p>Yes. You can upgrade from Basic to Pro anytime.</p>
+          <h3>Can I upgrade later?</h3>
+          <p>Yes. You can upgrade from Basic to Pro anytime.</p>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
+    <footer>
+      <h2>Ready to Simplify COD in Algeria?</h2>
 
-<footer>
-
-    <h2>Ready to Simplify COD in Algeria?</h2>
-
-    <p style="margin:20px 0;">
+      <p style="margin: 20px 0">
         Join WooCommerce store owners using WooCoD DZ.
-    </p>
+      </p>
 
-    <a href="https://checkout.freemius.com/plugin/30694/plan/51741/" class="btn btn-primary">
+      <a
+        href="https://checkout.freemius.com/plugin/30694/plan/51741/"
+        class="btn btn-primary"
+      >
         Get Basic
-    </a>
+      </a>
 
-    <a href="YOUR_PRO_FREEMIUS_URL" class="btn btn-secondary">
-        Get Pro
-    </a>
-
-</footer>
-
-</body>
+      <a href="YOUR_PRO_FREEMIUS_URL" class="btn btn-secondary"> Get Pro </a>
+    </footer>
+  </body>
 </html>
